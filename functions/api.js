@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const Medicine = require("./routes/medicine");
 const TestInfo = require("./routes/testinfo");
-const Article = require("./routes/medicine");
+const Article = require("./routes/article");
 
 dotenv.config();
 app.use(cors());
