@@ -7,6 +7,8 @@ const Medicine = require("../routes/medicine");
 const TestInfo = require("../routes/testinfo");
 const Article = require("../routes/article");
 
+const serverless = require("serverless-http");
+
 dotenv.config();
 app.use(cors());
 app.use(express.json());
@@ -30,4 +32,4 @@ mongoose.connect(
     console.error("Error connecting to MongoDB:", err);
 });
 
-module.exports.handler = app;
+module.exports.handler = serverless(app);
