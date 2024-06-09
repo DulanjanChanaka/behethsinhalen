@@ -18,16 +18,16 @@ app.get("/", (req, res) => res.status(200).json({ msg: "hi" }))
 mongoose.connect(
     "mongodb+srv://behethsinhalen:beheth1994pw@behethsinhalen.nrraklz.mongodb.net/?retryWrites=true&w=majority&appName=behethsinhalen",
     {
-        // useNewUrlParser: true,
-        // useUnifiedTopology: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
     }
 ).then(() => {
-    console.log("DB Connection Successful!");
-    app.listen( 5000, () => {
-        console.log("Backend Server is Running!");
+    console.log("DB Connection Successfull!");
+    app.listen(process.env.PORT || 5000, () => {
+      console.log("Backend server is running!");
     });
 }).catch((err) => {
     console.error("Error connecting to MongoDB:", err);
 });
 
-
+module.exports = app;
