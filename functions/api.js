@@ -6,6 +6,9 @@ const mongoose = require("mongoose");
 const Medicine = require("../routes/medicine");
 const TestInfo = require("../routes/testinfo");
 const Article = require("../routes/article");
+const Message = require("../routes/message");
+const Swiper = require("../routes/swiper");
+const Group = require("../routes/group");
 
 const serverless = require("serverless-http");
 
@@ -15,6 +18,9 @@ app.use(express.json());
 app.use("/api/medicine", Medicine)
 app.use("/api/testinfo", TestInfo)
 app.use("/api/article",Article)
+app.use("/api/message",Message)
+app.use("/api/swiper",Swiper)
+app.use("/api/group",Group)
 app.get("/", (req, res) => res.status(200).json({ msg: "hi" }))
 
 mongoose.connect(
